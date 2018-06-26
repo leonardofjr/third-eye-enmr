@@ -72,6 +72,7 @@ class Elegant_Appointment_Booking_Admin {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
+		wp_enqueue_style( 'bootstrap-style', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
 
 		wp_enqueue_style( $this->elegant_appointment_booking, plugin_dir_url( __FILE__ ) . 'css/elegant-appointment-booking-admin.css', array(), $this->version, 'all' );
 
@@ -97,7 +98,43 @@ class Elegant_Appointment_Booking_Admin {
 		 */
 
 		wp_enqueue_script( $this->elegant_appointment_booking, plugin_dir_url( __FILE__ ) . 'js/elegant-appointment-booking-admin.js', array( 'jquery' ), $this->version, false );
-
+		wp_enqueue_script( 'bootstrap-js' , 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' );
 	}
 
 }
+
+
+
+add_action( 'admin_menu', 'elegant_appointment_booking_menu' );
+
+function elegant_appointment_booking_menu() {
+	add_menu_page('Elegant Booking Appointment', 'Elegant Booking Appointment', 'manage_options', 'elegant-appointment-booking-top-level-handle', 'elegant_appointment_booking_options');
+
+	add_submenu_page( 'elegant-appointment-booking-top-level-handle', 'Services', 'Services', 'manage_options', 'services-handle', 'elegant_appointment_booking_services_output');
+
+	add_submenu_page( 'elegant-appointment-booking-top-level-handle', 'Staff Members', 'Staff Members', 'manage_options', 'staff-members-handle', 'elegant_appointment_booking_staff_members_output');
+}
+
+
+function elegant_appointment_booking_options() {
+	if ( !current_user_can( 'manage_options' ) )  {
+		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+	}
+	include 'partials/elegant-appointment-booking-admin-display-main.php';
+}
+
+function elegant_appointment_booking_services_output() {
+	if ( !current_user_can( 'manage_options' ) )  {
+		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+	}
+	include 'partials/elegant-appointment-booking-admin-display-services.php';
+}
+
+
+function elegant_appointment_booking_staff_members_output() {
+	if ( !current_user_can( 'manage_options' ) )  {
+		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+	}
+	include 'partials/elegant-appointment-booking-admin-display-staff-members.php';
+}
+?>
