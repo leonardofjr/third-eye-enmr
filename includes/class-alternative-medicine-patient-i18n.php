@@ -9,8 +9,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Elegant_Appointment_Booking
- * @subpackage Elegant_Appointment_Booking/includes
+ * @package    Alternative_Medicine_Patient
+ * @subpackage Alternative_Medicine_Patient/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Elegant_Appointment_Booking
- * @subpackage Elegant_Appointment_Booking/includes
+ * @package    Alternative_Medicine_Patient
+ * @subpackage Alternative_Medicine_Patient/includes
  * @author     Your Name <email@example.com>
  */
-class Elegant_Appointment_Booking_i18n {
+class Alternative_Medicine_Patient_i18n {
 
 
 	/**
@@ -35,7 +35,7 @@ class Elegant_Appointment_Booking_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'elegant_appointment_booking',
+			'alternative_medicine_patient',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);

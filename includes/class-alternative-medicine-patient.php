@@ -9,8 +9,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Elegant_Appointment_Booking
- * @subpackage Elegant_Appointment_Booking/includes
+ * @package    Alternative_Medicine_Patient
+ * @subpackage Alternative_Medicine_Patient/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Elegant_Appointment_Booking
- * @subpackage Elegant_Appointment_Booking/includes
+ * @package    Alternative_Medicine_Patient
+ * @subpackage Alternative_Medicine_Patient/includes
  * @author     Your Name <email@example.com>
  */
-class Elegant_Appointment_Booking {
+class Alternative_Medicine_Patient {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class Elegant_Appointment_Booking {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Elegant_Appointment_Booking_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Alternative_Medicine_Patient_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -44,9 +44,9 @@ class Elegant_Appointment_Booking {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      string    $elegant_appointment_booking    The string used to uniquely identify this plugin.
+	 * @var      string    $alternative_medicine_patient    The string used to uniquely identify this plugin.
 	 */
-	protected $elegant_appointment_booking;
+	protected $alternative_medicine_patient;
 
 	/**
 	 * The current version of the plugin.
@@ -67,12 +67,12 @@ class Elegant_Appointment_Booking {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'ELEGANT_APPOINTMENT_BOOKING_VERSION' ) ) {
-			$this->version = ELEGANT_APPOINTMENT_BOOKING_VERSION;
+		if ( defined( 'Alternative_Medicine_Patient_VERSION' ) ) {
+			$this->version = Alternative_Medicine_Patient_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->elegant_appointment_booking = 'elegant_appointment_booking';
+		$this->alternative_medicine_patient = 'alternative_medicine_patient';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -86,10 +86,10 @@ class Elegant_Appointment_Booking {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Elegant_Appointment_Booking_Loader. Orchestrates the hooks of the plugin.
-	 * - Elegant_Appointment_Booking_i18n. Defines internationalization functionality.
-	 * - Elegant_Appointment_Booking_Admin. Defines all hooks for the admin area.
-	 * - Elegant_Appointment_Booking_Public. Defines all hooks for the public side of the site.
+	 * - Alternative_Medicine_Patient_Loader. Orchestrates the hooks of the plugin.
+	 * - Alternative_Medicine_Patient_i18n. Defines internationalization functionality.
+	 * - Alternative_Medicine_Patient_Admin. Defines all hooks for the admin area.
+	 * - Alternative_Medicine_Patient_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -103,33 +103,33 @@ class Elegant_Appointment_Booking {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-elegant-appointment-booking-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-alternative-medicine-patient-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-elegant-appointment-booking-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-alternative-medicine-patient-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-elegant-appointment-booking-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-alternative-medicine-patient-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-elegant-appointment-booking-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-alternative-medicine-patient-public.php';
 
-		$this->loader = new Elegant_Appointment_Booking_Loader();
+		$this->loader = new Alternative_Medicine_Patient_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Elegant_Appointment_Booking_i18n class in order to set the domain and to register the hook
+	 * Uses the Alternative_Medicine_Patient_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -137,7 +137,7 @@ class Elegant_Appointment_Booking {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Elegant_Appointment_Booking_i18n();
+		$plugin_i18n = new Alternative_Medicine_Patient_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -152,7 +152,7 @@ class Elegant_Appointment_Booking {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Elegant_Appointment_Booking_Admin( $this->get_elegant_appointment_booking(), $this->get_version() );
+		$plugin_admin = new Alternative_Medicine_Patient_Admin( $this->get_alternative_medicine_patient(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -168,7 +168,7 @@ class Elegant_Appointment_Booking {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Elegant_Appointment_Booking_Public( $this->get_elegant_appointment_booking(), $this->get_version() );
+		$plugin_public = new Alternative_Medicine_Patient_Public( $this->get_alternative_medicine_patient(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -191,15 +191,15 @@ class Elegant_Appointment_Booking {
 	 * @since     1.0.0
 	 * @return    string    The name of the plugin.
 	 */
-	public function get_elegant_appointment_booking() {
-		return $this->elegant_appointment_booking;
+	public function get_alternative_medicine_patient() {
+		return $this->alternative_medicine_patient;
 	}
 
 	/**
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Elegant_Appointment_Booking_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Alternative_Medicine_Patient_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

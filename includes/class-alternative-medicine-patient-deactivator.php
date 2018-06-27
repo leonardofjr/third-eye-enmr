@@ -6,8 +6,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Elegant_Appointment_Booking
- * @subpackage Elegant_Appointment_Booking/includes
+ * @package    Alternative_Medicine_Patient
+ * @subpackage Alternative_Medicine_Patient/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's deactivation.
  *
  * @since      1.0.0
- * @package    Elegant_Appointment_Booking
- * @subpackage Elegant_Appointment_Booking/includes
+ * @package    Alternative_Medicine_Patient
+ * @subpackage Alternative_Medicine_Patient/includes
  * @author     Your Name <email@example.com>
  */
-class Elegant_Appointment_Booking_Deactivator {
+class Alternative_Medicine_Patient_Deactivator {
 
 	/**
 	 * Short Description. (use period)

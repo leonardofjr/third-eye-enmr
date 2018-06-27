@@ -10,18 +10,18 @@
  *
  * @link              http://example.com
  * @since             1.0.0
- * @package           Elegant_Appointment_Booking
+ * @package           Alternative_Medicine_Patient
  *
  * @wordpress-plugin
- * Plugin Name:       Elegant Appointment Booking
- * Plugin URI:        http://example.com/elegant-appointment-booking-uri/
+ * Plugin Name:       Alternative Medicine Patient
+ * Plugin URI:        http://example.com/alternative-medicine-patient-uri/
  * Description:       Add appointment booking functionality to your website to enhance the user experience of your website.
  * Version:           1.0.0
  * Author:            Leonardo Felipa
  * Author URI:        http://lfelipa.ca/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       elegant-appointment-booking
+ * Text Domain:       alternative-medicine-patient
  * Domain Path:       /languages
  */
 
@@ -35,34 +35,34 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'ELEGANT_APPOINTMENT_BOOKING_VERSION', '1.0.0' );
+define( 'Alternative_Medicine_Patient_VERSION', '1.0.0' );
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-elegant-appointment-booking-activator.php
+ * This action is documented in includes/class-alternative-medicine-patient-activator.php
  */
-function activate_elegant_appointment_booking() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-elegant-appointment-booking-activator.php';
-	Elegant_Appointment_Booking_Activator::activate();
+function activate_alternative_medicine_patient() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-alternative-medicine-patient-activator.php';
+	Alternative_Medicine_Patient_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-elegant-appointment-booking-deactivator.php
+ * This action is documented in includes/class-alternative-medicine-patient-deactivator.php
  */
-function deactivate_elegant_appointment_booking() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-elegant-appointment-booking-deactivator.php';
-	Elegant_Appointment_Booking_Deactivator::deactivate();
+function deactivate_alternative_medicine_patient() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-alternative-medicine-patient-deactivator.php';
+	Alternative_Medicine_Patient_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_elegant_appointment_booking' );
-register_deactivation_hook( __FILE__, 'deactivate_elegant_appointment_booking' );
+register_activation_hook( __FILE__, 'activate_alternative_medicine_patient' );
+register_deactivation_hook( __FILE__, 'deactivate_alternative_medicine_patient' );
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-elegant-appointment-booking.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-alternative-medicine-patient.php';
 
 /**
  * Begins execution of the plugin.
@@ -73,10 +73,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-elegant-appointment-bookin
  *
  * @since    1.0.0
  */
-function run_elegant_appointment_booking() {
+function run_alternative_medicine_patient() {
 
-	$plugin = new Elegant_Appointment_Booking();
+	$plugin = new Alternative_Medicine_Patient();
 	$plugin->run();
 
 }
-run_elegant_appointment_booking();
+run_alternative_medicine_patient();

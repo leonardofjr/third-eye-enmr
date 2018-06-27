@@ -6,8 +6,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Elegant_Appointment_Booking
- * @subpackage Elegant_Appointment_Booking/public
+ * @package    Alternative_Medicine_Patient
+ * @subpackage Alternative_Medicine_Patient/public
  */
 
 /**
@@ -16,20 +16,20 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the public-facing stylesheet and JavaScript.
  *
- * @package    Elegant_Appointment_Booking
- * @subpackageElegant_Appointment_Booking/public
+ * @package    Alternative_Medicine_Patient
+ * @subpackage Alternative_Medicine_Patient/public
  * @author     Your Name <email@example.com>
  */
-class Elegant_Appointment_Booking_Public {
+class Alternative_Medicine_Patient_Public {
 
 	/**
 	 * The ID of this plugin.
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string    $elegant_appointment_booking    The ID of this plugin.
+	 * @var      string    $alternative_medicine_patient    The ID of this plugin.
 	 */
-	private $elegant_appointment_booking;
+	private $alternative_medicine_patient;
 
 	/**
 	 * The version of this plugin.
@@ -44,12 +44,12 @@ class Elegant_Appointment_Booking_Public {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @param      string    $elegant_appointment_booking       The name of the plugin.
+	 * @param      string    $alternative_medicine_patient       The name of the plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
-	public function __construct( $elegant_appointment_booking, $version ) {
+	public function __construct( $alternative_medicine_patient, $version ) {
 
-		$this->elegant_appointment_booking = $elegant_appointment_booking;
+		$this->alternative_medicine_patient = $alternative_medicine_patient;
 		$this->version = $version;
 
 	}
@@ -65,15 +65,15 @@ class Elegant_Appointment_Booking_Public {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Elegant_Appointment_Booking_Loader as all of the hooks are defined
+		 * defined in Alternative_Medicine_Patient_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Elegant_Appointment_Booking_Loader will then create the relationship
+		 * The Alternative_Medicine_Patient_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->elegant_appointment_booking, plugin_dir_url( __FILE__ ) . 'css/plugin-name-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->alternative_medicine_patient, plugin_dir_url( __FILE__ ) . 'css/plugin-name-public.css', array(), $this->version, 'all' );
 
 	}
 
@@ -88,15 +88,15 @@ class Elegant_Appointment_Booking_Public {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Elegant_Appointment_Booking_Loader as all of the hooks are defined
+		 * defined in Alternative_Medicine_Patient_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Elegant_Appointment_Booking_Loader will then create the relationship
+		 * The Alternative_Medicine_Patient_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->elegant_appointment_booking, plugin_dir_url( __FILE__ ) . 'js/plugin-name-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->alternative_medicine_patient, plugin_dir_url( __FILE__ ) . 'js/plugin-name-public.js', array( 'jquery' ), $this->version, false );
 
 	}
 

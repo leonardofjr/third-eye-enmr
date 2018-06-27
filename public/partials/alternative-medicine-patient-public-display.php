@@ -8,8 +8,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Elegant_Appointment_Booking
- * @subpackage Elegant_Appointment_Booking/public/partials
+ * @package    Alternative_Medicine_Patient
+ * @subpackage Alternative_Medicine_Patient/public/partials
  */
 ?>
 
