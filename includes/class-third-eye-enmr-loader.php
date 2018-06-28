@@ -6,8 +6,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Alternative_Medicine_Patient
- * @subpackage Alternative_Medicine_Patient/includes
+ * @package    Third_Eye_ENMR
+ * @subpackage Third_Eye_ENMR/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Alternative_Medicine_Patient
- * @subpackage Alternative_Medicine_Patient/includes
+ * @package    Third_Eye_ENMR
+ * @subpackage Third_Eye_ENMR/includes
  * @author     Your Name <email@example.com>
  */
-class Alternative_Medicine_Patient_Loader {
+class Third_Eye_ENMR_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

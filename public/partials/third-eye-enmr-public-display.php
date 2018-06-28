@@ -8,8 +8,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Alternative_Medicine_Patient
- * @subpackage Alternative_Medicine_Patient/public/partials
+ * @package    Third_Eye_ENMR
+ * @subpackage Third_Eye_ENMR/public/partials
  */
 ?>
 

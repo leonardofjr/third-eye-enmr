@@ -9,8 +9,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Alternative_Medicine_Patient
- * @subpackage Alternative_Medicine_Patient/includes
+ * @package    Third_Eye_ENMR
+ * @subpackage Third_Eye_ENMR/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Alternative_Medicine_Patient
- * @subpackage Alternative_Medicine_Patient/includes
+ * @package    Third_Eye_ENMR
+ * @subpackage Third_Eye_ENMR/includes
  * @author     Your Name <email@example.com>
  */
-class Alternative_Medicine_Patient {
+class Third_Eye_ENMR {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class Alternative_Medicine_Patient {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Alternative_Medicine_Patient_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Third_Eye_ENMR_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -44,9 +44,9 @@ class Alternative_Medicine_Patient {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      string    $alternative_medicine_patient    The string used to uniquely identify this plugin.
+	 * @var      string    $third_eye_enmr    The string used to uniquely identify this plugin.
 	 */
-	protected $alternative_medicine_patient;
+	protected $third_eye_enmr;
 
 	/**
 	 * The current version of the plugin.
@@ -67,12 +67,12 @@ class Alternative_Medicine_Patient {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'Alternative_Medicine_Patient_VERSION' ) ) {
-			$this->version = Alternative_Medicine_Patient_VERSION;
+		if ( defined( 'Third_Eye_ENMR_VERSION' ) ) {
+			$this->version = Third_Eye_ENMR_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->alternative_medicine_patient = 'alternative_medicine_patient';
+		$this->third_eye_enmr = 'third_eye_enmr';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -86,10 +86,10 @@ class Alternative_Medicine_Patient {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Alternative_Medicine_Patient_Loader. Orchestrates the hooks of the plugin.
-	 * - Alternative_Medicine_Patient_i18n. Defines internationalization functionality.
-	 * - Alternative_Medicine_Patient_Admin. Defines all hooks for the admin area.
-	 * - Alternative_Medicine_Patient_Public. Defines all hooks for the public side of the site.
+	 * - Third_Eye_ENMR_Loader. Orchestrates the hooks of the plugin.
+	 * - Third_Eye_ENMR_i18n. Defines internationalization functionality.
+	 * - Third_Eye_ENMR_Admin. Defines all hooks for the admin area.
+	 * - Third_Eye_ENMR_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -103,33 +103,33 @@ class Alternative_Medicine_Patient {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-alternative-medicine-patient-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-third-eye-enmr-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-alternative-medicine-patient-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-third-eye-enmr-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-alternative-medicine-patient-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-third-eye-enmr-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-alternative-medicine-patient-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-third-eye-enmr-public.php';
 
-		$this->loader = new Alternative_Medicine_Patient_Loader();
+		$this->loader = new Third_Eye_ENMR_Loader();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Alternative_Medicine_Patient_i18n class in order to set the domain and to register the hook
+	 * Uses the Third_Eye_ENMR_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -137,7 +137,7 @@ class Alternative_Medicine_Patient {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Alternative_Medicine_Patient_i18n();
+		$plugin_i18n = new Third_Eye_ENMR_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -152,10 +152,12 @@ class Alternative_Medicine_Patient {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Alternative_Medicine_Patient_Admin( $this->get_alternative_medicine_patient(), $this->get_version() );
+		$plugin_admin = new Third_Eye_ENMR_Admin( $this->get_third_eye_enmr(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		$this->loader->add_action( 'admin_menu', $plugin_admin,  'third_eye_enmr_menu' );
+		$this->loader->add_action( 'wp_ajax_my_action', $plugin_admin,  'my_action' );
 
 	}
 
@@ -168,11 +170,10 @@ class Alternative_Medicine_Patient {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Alternative_Medicine_Patient_Public( $this->get_alternative_medicine_patient(), $this->get_version() );
+		$plugin_public = new Third_Eye_ENMR_Public( $this->get_third_eye_enmr(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-
 	}
 
 	/**
@@ -191,15 +192,15 @@ class Alternative_Medicine_Patient {
 	 * @since     1.0.0
 	 * @return    string    The name of the plugin.
 	 */
-	public function get_alternative_medicine_patient() {
-		return $this->alternative_medicine_patient;
+	public function get_third_eye_enmr() {
+		return $this->third_eye_enmr;
 	}
 
 	/**
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Alternative_Medicine_Patient_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Third_Eye_ENMR_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

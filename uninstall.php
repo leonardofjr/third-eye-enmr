@@ -22,7 +22,7 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Alternative_Medicine_Patient
+ * @package    Third_Eye_ENMR
  */
 
 // If uninstall not called from WordPress, then exit.

@@ -9,8 +9,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Alternative_Medicine_Patient
- * @subpackage Alternative_Medicine_Patient/includes
+ * @package    Third_Eye_ENMR
+ * @subpackage Third_Eye_ENMR/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Alternative_Medicine_Patient
- * @subpackage Alternative_Medicine_Patient/includes
+ * @package    Third_Eye_ENMR
+ * @subpackage Third_Eye_ENMR/includes
  * @author     Your Name <email@example.com>
  */
-class Alternative_Medicine_Patient_i18n {
+class Third_Eye_ENMR_i18n {
 
 
 	/**
@@ -35,7 +35,7 @@ class Alternative_Medicine_Patient_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'alternative_medicine_patient',
+			'third_eye_enmr',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);

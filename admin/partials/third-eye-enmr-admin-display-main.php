@@ -8,8 +8,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Elegant_Appointment_Booking
- * @subpackage Elegant_Appointment_Booking/admin/partials
+ * @package    Third_Eye_ENMR
+ * @subpackage Third_Eye_ENMR/admin/partials
  */
 ?>
 
